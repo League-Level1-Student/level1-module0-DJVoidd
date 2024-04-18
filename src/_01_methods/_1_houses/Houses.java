@@ -1,5 +1,7 @@
 package _01_methods._1_houses;
 
+import java.awt.Color;
+
 import org.jointheleague.graphical.robot.Robot;
 
 /*
@@ -7,8 +9,9 @@ import org.jointheleague.graphical.robot.Robot;
  *    Level 1
  */
 public class Houses {
+	Robot rob = new Robot();
 	public void run() {
-		Robot rob = new Robot();
+
 		rob.hide();
 		rob.setRandomPenColor();
 		rob.setX(10);
@@ -16,13 +19,32 @@ public class Houses {
 		rob.penDown();
 		rob.setSpeed(1000);
 		rob.setAngle(0);
-		rob.move(100);
+		drawHouse("small", Color.black);
+		drawHouse("medium", Color.red);
+		drawHouse("large", Color.GREEN);
+	}
+
+	public void drawHouse(int height, Color color) {
+		rob.setPenColor(color);
+		rob.move(height);
 		rob.turn(90);
 		rob.move(25);
 		rob.turn(90);
-		rob.move(100);
+		rob.move(height);
 		rob.turn(-90);
-		rob.setPenColor(0,200,0);
+		rob.setPenColor(100,200,100);
 		rob.move(25);
+		rob.setAngle(0);
+	}	
+	public void drawHouse(String height, Color color) {
+		if (height.equals("small")) {
+			drawHouse(60, color);
+		}
+		if (height.equals("medium")) {
+			drawHouse(120, color);
+		}
+		if (height.equals("large")) {
+			drawHouse(250, color);
+		}
 	}
 }
