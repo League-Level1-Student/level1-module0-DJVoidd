@@ -22,19 +22,42 @@ public class Houses {
 		drawHouse("small", Color.black);
 		drawHouse("medium", Color.red);
 		drawHouse("large", Color.GREEN);
+		drawHouse("small", Color.black);
+		drawHouse("medium", Color.red);
+		drawHouse("large", Color.GREEN);
+		drawHouse("small", Color.black);
+		drawHouse("medium", Color.red);
+		drawHouse("large", Color.GREEN);
+		drawHouse("small", Color.black);
 	}
 
 	public void drawHouse(int height, Color color) {
 		rob.setPenColor(color);
 		rob.move(height);
-		rob.turn(90);
-		rob.move(25);
-		rob.turn(90);
+		if (height==250) {
+			drawFlatRoof();
+		}
+		else {
+		drawPointyRoof();
+		}
 		rob.move(height);
 		rob.turn(-90);
 		rob.setPenColor(100,200,100);
 		rob.move(25);
 		rob.setAngle(0);
+	}
+
+	private void drawPointyRoof() {
+		rob.turn(45);
+		rob.move(25);
+		rob.turn(90);
+		rob.move(25);
+		rob.turn(45);
+	}	
+	private void drawFlatRoof() {
+		rob.turn(90);
+		rob.move(25);
+		rob.turn(90);
 	}	
 	public void drawHouse(String height, Color color) {
 		if (height.equals("small")) {
