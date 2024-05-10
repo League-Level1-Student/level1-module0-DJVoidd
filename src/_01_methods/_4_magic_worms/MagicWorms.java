@@ -40,12 +40,14 @@ public class MagicWorms extends PApplet {
 
     @Override
     public void setup() {
-
+background(0,0,0);
     }
 
     @Override
     public void draw() {
-
+for(int i = 600; i<299; i--) {
+	ellipse(i,i,10,10);
+}
     }
 
     static public void main(String[] args) {
