@@ -27,36 +27,44 @@ public class PhotoQuiz {
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
 		String image = "https://images.everydayhealth.com/images/diet-nutrition/how-many-calories-are-in-a-banana-1440x810.jpg";
-				// 2. create a variable of type "Component" that will hold your image
-Component imageHolder = createImage(image);
-				// 3. use the "createImage()" method below to initialize your Component
+		// 2. create a variable of type "Component" that will hold your image
+		Component imageHolder = createImage(image);
+		// 3. use the "createImage()" method below to initialize your Component
 
-				// 4. add the image to the quiz window
-quizWindow.add(imageHolder);
-				// 5. call the pack() method on the quiz window
-quizWindow.pack();
-				// 6. ask a question that relates to the image
-String q1 = JOptionPane.showInputDialog("This food is a great source of which essential electrolyte?");
-				// 7. print "CORRECT" if the user gave the right answer
-if (q1.equals("potassium")) {
-	
-}
-				// 8. print "INCORRECT" if the answer is wrong
-
-				// 9. remove the component from the quiz window (you may not see the
-				// effect of this until step 12)
-
-				// 10. find another image and create it (might take more than one line
-				// of code)
-
-				// 11. add the second image to the quiz window
-
-				// 12. pack the quiz window
-
-				// 13. ask another question
-
-				// 14+ check answer, say if correct or incorrect, etc.
-
+		// 4. add the image to the quiz window
+		quizWindow.add(imageHolder);
+		// 5. call the pack() method on the quiz window
+		quizWindow.pack();
+		// 6. ask a question that relates to the image
+		String q1 = JOptionPane.showInputDialog("This food is a great source of which important metal");
+		// 7. print "CORRECT" if the user gave the right answer
+		if (q1.equals("potassium")) {
+			JOptionPane.showMessageDialog(null, "CORRECT");
+		}
+		// 8. print "INCORRECT" if the answer is wrong
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+		}
+		// 9. remove the component from the quiz window (you may not see the
+		// effect of this until step 12)
+		quizWindow.remove(imageHolder);
+		// 10. find another image and create it (might take more than one line
+		// of code)
+		String image2 = "https://i5.walmartimages.com/seo/Fresh-Navel-Orange-Each_a134f2a1-2bb0-4e5c-a594-f84b63ab5928.22241f295458186b2ba0e4ed7d460d52.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF";
+		Component image2Holder = createImage(image2);
+		// 11. add the second image to the quiz window
+		quizWindow.add(image2Holder);
+		// 12. pack the quiz window
+		quizWindow.pack();
+		// 13. ask another question
+		String q2 = JOptionPane.showInputDialog("Which vitamin is this picture know to posses?");
+		// 14+ check answer, say if correct or incorrect, etc.
+		if (q2.equals("vitamin c")) {
+			JOptionPane.showMessageDialog(null, "CORRECT");
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "INCORRECT");
+		}
 	}
 
 	private Component createImage(String imageUrl) {
